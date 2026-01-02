@@ -11,6 +11,7 @@
     --x-padding: 3vh;
     --y-padding: 3vw;
     --main-fg: #e3e3de;
+    --main-fg-faded: #e3e3de7b;
     --main-bg: #1a1613;
     --acc-fg: #ffff8f;
     --font-pixel: 'Silkscreen', monospace;
@@ -78,10 +79,6 @@ main {
 
 main footer {
     width: 25rem;
-    font-size: 0.8rem;
-}
-
-footer {
     padding: var(--general-padding) 0;
 }
 
@@ -91,6 +88,10 @@ footer {
 
 .font-bold {
     font-weight: 500;
+}
+
+.font-tiny {
+    font-size: 0.8rem;
 }
 
 .wrapper {
@@ -188,6 +189,6 @@ footer {
     }
 
     html {
-        font-size: clamp(9px, 5vw, 20px);
+        font-size: clamp(9px, 5vw, 22px);
     }
 }
