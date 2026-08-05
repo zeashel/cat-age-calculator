@@ -1,7 +1,7 @@
-/* 
- * Copyright (c) 2025. Zahra A. S., All rights reserved. 
- * This design is the intellectual property of Zahra A. S. 
- * Unauthorized use, reproduction, or distribution of this design is prohibited. 
+/*
+ * Copyright (c) 2025. Zahra A. S., All rights reserved.
+ * This design is the intellectual property of Zahra A. S.
+ * Unauthorized use, reproduction, or distribution of this design is prohibited.
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
@@ -18,7 +18,7 @@
 }
 
 /* Silkscreen font import */
-@font-face { 
+@font-face {
     font-family: 'Silkscreen';
     src: url('../fonts/Silkscreen-Regular.woff2') format('woff2');
     font-weight: 100 400; /* range of weights */
@@ -26,7 +26,7 @@
 }
 
 /* Silkscreen font import (bold) */
-@font-face { 
+@font-face {
     font-family: 'Silkscreen';
     src: url('../fonts/Silkscreen-Bold.woff2') format('woff2');
     font-weight: 500 800; /* range of weights */
@@ -110,7 +110,7 @@ main footer {
     height: auto;
 }
 
-.form-element, 
+.form-element,
 .form-set {
     font-size: 1.25rem;
 }
