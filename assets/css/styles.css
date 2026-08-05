@@ -140,6 +140,7 @@ main footer {
     color: var(--main-bg);
     width: 3.3em;
     padding: 1px;
+    overflow: hidden;
 }
 
 .dob-field .form-element {
