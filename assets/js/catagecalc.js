@@ -1,7 +1,7 @@
-/* 
- * Copyright (c) 2025. Zahra A. S., All rights reserved. 
- * This design is the intellectual property of Zahra A. S. 
- * Unauthorized use, reproduction, or distribution of this design is prohibited. 
+/*
+ * Copyright (c) 2025. Zahra A. S., All rights reserved.
+ * This design is the intellectual property of Zahra A. S.
+ * Unauthorized use, reproduction, or distribution of this design is prohibited.
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
@@ -14,11 +14,20 @@ function liveInputHandler() {
 }
 
 function catToHumanAge(catAge) {
-    pre = '<span style="color:var(--acc-fg);">'
-    post = '</span>'
+    pre = '<span style="color:var(--acc-fg);">';
+    post = '</span>';
+
+    // sanitize
     if (catAge == "") {
         return "unknown";
     }
+    else if (catAge < 0) {
+        return "int too small";
+    }
+    else if (catAge > 999) {
+        return "int too large";
+    }
+
     // 0 <= x < 1
     else if (catAge >= 0 && catAge < 1) {
         return `around ${pre}${Math.round(15 * catAge)}${post}`;
