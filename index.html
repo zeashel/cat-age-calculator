@@ -1,9 +1,9 @@
 <!--
 Copyright (c) 2025. Zahra A. S.
-All rights reserved. 
+All rights reserved.
 
-This design is the intellectual property of Zahra A. S. Unauthorized 
-use, reproduction, or distribution of this design is prohibited. 
+This design is the intellectual property of Zahra A. S. Unauthorized
+use, reproduction, or distribution of this design is prohibited.
 For permissions, contact 182934048+zeashel@users.noreply.github.com
 -->
 
@@ -22,6 +22,8 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <img class="pixel-art cat" src="assets/img/cats.gif">
         <main>
             <h1>cat age<br>calculator</h1>
+
+            <!-- int input -->
             <div class="form-set">
                 <label class="font-bold" for="catAge">your cat's age:</label>
                 <input autofocus class="form-element" id="catAge" type="number" placeholder="age (number)">
@@ -30,12 +32,29 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
                 <p class="font-bold nowrap">human years:</p>
                 <span id="convertedAge" class="nowrap">unknown</span>
             </div>
-            <!-- <div class="form-set dob">
-                <input id="useDOB" type="checkbox"><p class="font-tiny">Input DOB instead</p>
-            </div> -->
+
+            <!-- dob input -->
+            <div class="form-set dob-toggle">
+                <input id="useDOB" type="checkbox"><p class="font-tiny">Input DOB instead (precise)</p>
+            </div>
+
+            <div class="form-set dob-field">
+                <label class="font-bold" for="catDOB">Your cat's date of birth:</label>
+                <div class="form-set">
+                    <input
+                        class="form-element"
+                        type="date"
+                        id="catDOB"
+                        value="2010-01-01"
+                    />
+                    <p>(N years old)</p>
+                </div>
+            </div>
+
             <footer class="font-tiny">
                 <p>art and code by zahra.<br><a href="about.html">source of formula</a> | <a href="https://github.com/zeashel/cat-age-calculator">my github</a></p>
             </footer>
+
         </main>
     </div>
     <script src="assets/js/catagecalc.js"></script>
