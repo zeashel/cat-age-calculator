@@ -62,7 +62,7 @@ body {
     align-items: center;
 }
 
-h1 {
+h1, h2, h3 {
     padding-bottom: var(--general-padding);
 }
 
@@ -123,6 +123,17 @@ main footer {
     padding-bottom: 1vh;
 }
 
+.form-set.dob-toggle {
+    margin-top: 1vh;
+    gap: 0.35em;
+    color: var(--main-fg-faded);
+}
+
+.form-set.dob-field {
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
 .form-element {
     border: none;
     font-family: var(--font-pixel);
@@ -132,19 +143,19 @@ main footer {
     overflow: hidden;
 }
 
+.dob-field .form-element {
+    width: auto;
+    padding: 1px;
+    margin: 0;
+}
+
 .nowrap {
     white-space: nowrap;
     overflow: hidden;
 }
 
-.form-set.dob {
-    margin-top: 1vh;
-    gap: 0.35em;
-    color: var(--main-fg-faded);
-}
-
 #useDOB {
-    margin-top: 0.1em;
+    margin-top: 0.3em;
 }
 
 @media (max-width: 900px) {
@@ -183,7 +194,7 @@ main footer {
         gap: 0.5vh;
     }
 
-    .form-set.dob {
+    .form-set.dob-toggle {
         flex-direction: row;
         gap: 0.35em;
     }
