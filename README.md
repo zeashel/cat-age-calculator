@@ -14,7 +14,8 @@ This is a completely vanilla HTML/CSS/JS app. Use a basic web server (like pytho
 
 1. Clone this repo.
 ```bash
-git clone https://github.com/zeashel/cat-age-calculator.git```
+git clone https://github.com/zeashel/cat-age-calculator.git
+```
 
 2. Go to the repo directory.
 ```bash
