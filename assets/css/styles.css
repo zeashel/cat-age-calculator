@@ -145,13 +145,13 @@ main footer {
 
 .dob-field .form-element {
     width: auto;
-    padding: 1px;
+    padding: 0.1em;
     margin: 0;
 }
 
 .nowrap {
     white-space: nowrap;
-    overflow: hidden;
+    text-align: center;
 }
 
 #useDOB {
@@ -201,6 +201,7 @@ main footer {
 
     .form-element {
         margin-bottom: var(--x-padding);
+        text-align: center;
     }
 
     #convertedAge,
