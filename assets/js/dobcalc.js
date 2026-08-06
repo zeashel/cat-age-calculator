@@ -8,11 +8,14 @@
 import { catToHumanAge } from "./catagecalc.js";
 
 const inputElementDOB = document.getElementById("catDOB"); // dob input
-const outputElement = document.getElementById("convertedAge"); // output
+const catAgeOutputElement = document.getElementById("catAgeFromDOB") // in cat years output
+const outputElement = document.getElementById("convertedAge"); // in human years output
 
 function liveInputHandlerDOB() {
     const userInput = inputElementDOB.value;
     const catAge = dateCalculator(userInput);
+
+    catAgeOutputElement.innerHTML = catAgeParse(catAge);
     outputElement.innerHTML = catToHumanAge(catAge);
 }
 
@@ -43,6 +46,14 @@ function dateCalculator(dobValue) {
 function ageAsDecimal(birthDate, asOfDate) {
     const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
     return (asOfDate - birthDate) / msPerYear;
+}
+
+function catAgeParse(num) {
+    if (num == "" || num == null || num < 0 || num > 999) {
+        return "...";
+    } else {
+        return Math.round(num * 100) / 100;
+    }
 }
 
 // run on page load
