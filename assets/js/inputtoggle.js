@@ -12,9 +12,9 @@ const dobInput = document.getElementById("dobInput");
 checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
         intInput.style.display = "none";
-        dobInput.style.display = "block";
+        dobInput.style.display = "flex";
     } else {
-        intInput.style.display = "block";
+        intInput.style.display = "flex";
         dobInput.style.display = "none";
     }
 });
