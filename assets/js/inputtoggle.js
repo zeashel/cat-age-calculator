@@ -9,7 +9,8 @@ const checkbox = document.getElementById("inputToggleCheckbox"); // when checked
 const intInput = document.getElementById("intInput");
 const dobInput = document.getElementById("dobInput");
 
-checkbox.addEventListener("change", () => {
+// function to update display based on checkbox state
+function updateInputDisplay() {
     if (checkbox.checked) {
         intInput.style.display = "none";
         dobInput.style.display = "flex";
@@ -17,4 +18,10 @@ checkbox.addEventListener("change", () => {
         intInput.style.display = "flex";
         dobInput.style.display = "none";
     }
-});
+}
+
+// run on page load
+document.addEventListener("DOMContentLoaded", updateInputDisplay);
+
+// run on checkbox change
+checkbox.addEventListener("change", updateInputDisplay);
