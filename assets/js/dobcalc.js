@@ -16,21 +16,33 @@ function liveInputHandlerDOB() {
     outputElement.innerHTML = catToHumanAge(catAge);
 }
 
+// notes:
+// Date objects can be subtracted and compared because javascript
+// converts them into milliseconds since January 1, 1970
+
 function dateCalculator(dobValue) {
-    const [catYear, catMonth, catDate] = dobValue.split("-").map(Number); // cat dob values
-
-    // current date values
+    // cat's dob into a Date object
+    const catDob = new Date(dobValue);
+    // current date into a Date object
     const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1); // 0-11 so we increment by 1
-    const date = String(now.getDate()); // 1-31
 
-    // DEBUG
-    console.log(catYear, catMonth, catDate);
-    console.log(year, month, date);
+    // make sure catDob is a valid date
+    if (Number.isNaN(catDob.getTime())) return null;
 
-    // TEMP
-    return catDate;
+    // DBEUG
+    console.log(catDob, now, ageAsDecimal(catDob, now))
+
+    // make sure `now` is later than `catDob`, else return null
+    if (now > catDob) {
+        return ageAsDecimal(catDob, now);
+    } else {
+        return null;
+    }
+}
+
+function ageAsDecimal(birthDate, asOfDate) {
+    const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
+    return (asOfDate - birthDate) / msPerYear;
 }
 
 // run on page load
