@@ -1,6 +1,10 @@
 # Cat Age Calculator
 
-Calculates your cat's approximate age in human years with a formula that's based on [Purina Pet Expert Team](https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years)'s article. Input your cat's age or date of birth and the calculator will give you their approximate age in human years.
+Calculates your cat's approximate age in human years with a formula that's based on [Purina Pet Expert Team](https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years)'s article. Input your cat's age or date of birth and the calculator will instantly show their approximate age in human years.
+
+## Stack
+
+Vanilla HTML, CSS, and JavaScript
 
 ## Local Development
 
