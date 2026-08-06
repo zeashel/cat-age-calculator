@@ -5,12 +5,15 @@
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
+// the main function that uses the cat-to-human years formula
+// - arg: int (or any other value which will return "unknown")
+// - returns: HTML string
 export function catToHumanAge(catAge) {
     const pre = '<span style="color:var(--acc-fg);">';
     const post = "</span>";
 
     // sanitize
-    if (catAge == "") {
+    if (catAge == "" || catAge == null) {
         return "unknown";
     } else if (catAge < 0) {
         return "int too small";
