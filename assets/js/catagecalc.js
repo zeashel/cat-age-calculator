@@ -32,11 +32,8 @@ export function catToHumanAge(catAge) {
     else if (catAge > 1 && catAge < 2) {
         return `${pre}${Math.round(6 + 9 * catAge)}${post} years old`;
     }
-    else if (catAge == 2) {
-        return `${pre}24${post} years old`;
-    }
-    // above 2
-    else if (catAge > 2) {
+    // 2 or above
+    else if (catAge >= 2) {
         return `${pre}${Math.round(16 + 4 * catAge)}${post} years old`;
     } else {
         return "unknown";
