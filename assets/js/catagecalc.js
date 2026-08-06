@@ -30,14 +30,14 @@ function catToHumanAge(catAge) {
 
     // 0 <= x < 1
     else if (catAge >= 0 && catAge < 1) {
-        return `around ${pre}${Math.round(15 * catAge)}${post}`;
+        return `${pre}${Math.round(15 * catAge)}${post} years old`;
     }
     else if (catAge == 1) {
         return `${pre}15${post} years old`;
     }
     // 1 < x < 2
     else if (catAge > 1 && catAge < 2) {
-        return `around ${pre}${Math.round(6 + 9 * catAge)}${post}`;
+        return `${pre}${Math.round(6 + 9 * catAge)}${post} years old`;
     }
     else if (catAge == 2) {
         return `${pre}24${post} years old`;
@@ -51,4 +51,8 @@ function catToHumanAge(catAge) {
     }
 }
 
+// run on page load
+document.addEventListener("DOMContentLoaded", liveInputHandler);
+
+// run on form input change
 inputElement.addEventListener("input", liveInputHandler);
