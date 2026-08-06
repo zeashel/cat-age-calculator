@@ -5,41 +5,9 @@
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
-const inputElement = document.getElementById("catAge"); // age int input
-const inputElementDOB = document.getElementById("catDOB"); // dob input
-const outputElement = document.getElementById("convertedAge"); // output
-
-function liveInputHandler() {
-    const userInput = inputElement.value;
-    outputElement.innerHTML = catToHumanAge(userInput);
-}
-
-function liveInputHandlerDOB() {
-    const userInput = inputElementDOB.value;
-    const catAge = dateCalculator(userInput);
-    outputElement.innerHTML = catToHumanAge(catAge);
-}
-
-function dateCalculator(dobValue) {
-    const [catYear, catMonth, catDate] = dobValue.split("-").map(Number); // cat dob values
-
-    // current date values
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1); // 0-11 so we increment by 1
-    const date = String(now.getDate()); // 1-31
-
-    // DEBUG
-    console.log(catYear, catMonth, catDate);
-    console.log(year, month, date);
-
-    // TEMP
-    return catDate;
-}
-
-function catToHumanAge(catAge) {
-    pre = '<span style="color:var(--acc-fg);">';
-    post = "</span>";
+export function catToHumanAge(catAge) {
+    const pre = '<span style="color:var(--acc-fg);">';
+    const post = "</span>";
 
     // sanitize
     if (catAge == "") {
@@ -71,11 +39,3 @@ function catToHumanAge(catAge) {
         return "unknown";
     }
 }
-
-// run on page load
-document.addEventListener("DOMContentLoaded", liveInputHandler);
-document.addEventListener("DOMContentLoaded", liveInputHandlerDOB);
-
-// run on form input change
-inputElement.addEventListener("input", liveInputHandler);
-inputElementDOB.addEventListener("input", liveInputHandlerDOB);
