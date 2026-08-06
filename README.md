@@ -10,16 +10,16 @@ Vanilla HTML, CSS, and JavaScript.
 
 ## Local Development
 
-This is a completely vanilla HTML/CSS/JS app. Use a basic web server (like python `http.server`) for local testing.
+This is a completely vanilla HTML/CSS/JS app. Use a basic web server (like python `http.server`) and serve from the directory outside the repo to replicate github pages' deplyment structure for local testing.
 
 1. Clone this repo.
 ```bash
-git clone https://github.com/zeashel/cat-age-calculator.git
+git clone https://github.com/zeashel/cat-age-calculator.git zeashel-cat-age/cat-age-calculator
 ```
 
 2. Go to the repo directory.
 ```bash
-cd cat-age-calculator
+cd zeashel-cat-age
 ```
 
 3. Start python http.server (or any web server) for local development.
@@ -27,4 +27,4 @@ cd cat-age-calculator
 python3 -m http.server 8000
 ```
 
-4. Open `http://localhost:8000/` in your browser to preview local changes.
+4. Open `http://localhost:8000/cat-age-calculator` in your browser to preview local changes.
