@@ -21,19 +21,16 @@ export function catToHumanAge(catAge) {
         return "int too large";
     }
 
-    // 0 <= x < 1
-    else if (catAge >= 0 && catAge < 1) {
+    // from 0 = 0 ... 1 = 15 -> 0 <= x <= 1: f(x) = 15x
+    else if (catAge >= 0 && catAge <= 1) {
         return `${pre}${Math.round(15 * catAge)}${post} years old`;
     }
-    else if (catAge == 1) {
-        return `${pre}15${post} years old`;
-    }
-    // 1 < x < 2
-    else if (catAge > 1 && catAge < 2) {
+    // from 1 = 15 ... 2 = 24 -> 1 < x <= 2: f(x) = 6 + 9x
+    else if (catAge > 1 && catAge <= 2) {
         return `${pre}${Math.round(6 + 9 * catAge)}${post} years old`;
     }
-    // 2 or above
-    else if (catAge >= 2) {
+    // from 2 = 24 ... x = 24 + 4(x - 2) -> x > 2: f(x) = 16 + 4x
+    else if (catAge > 2) {
         return `${pre}${Math.round(16 + 4 * catAge)}${post} years old`;
     } else {
         return "unknown";
