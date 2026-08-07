@@ -32,9 +32,6 @@ function dateCalculator(dobValue) {
     // make sure catDob is a valid date
     if (Number.isNaN(catDob.getTime())) return null;
 
-    // DBEUG
-    console.log(catDob, now, ageAsDecimal(catDob, now))
-
     // make sure `now` is later than `catDob`, else return null
     if (now > catDob) {
         return ageAsDecimal(catDob, now);
