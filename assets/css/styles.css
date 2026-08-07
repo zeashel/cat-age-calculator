@@ -83,6 +83,15 @@ main footer {
     padding: var(--general-padding) 0;
 }
 
+.noscript-div {
+    width: 20rem;
+    background-color: #dc143c75;
+    border: 0.1em solid #dc143c;
+    border-radius: 5px;
+    padding: 0.3em 0.3em;
+    margin: 0 0 var(--general-padding) 0;
+}
+
 /* ===========================
  * CLASSES
  * =========================== */
@@ -177,7 +186,8 @@ main footer {
         font-size: clamp(16px, 5vw, 22px);
     }
 
-    main footer {
+    main footer,
+    .noscript-div {
         width: clamp(0px, 90vw, 500px);
     }
 
