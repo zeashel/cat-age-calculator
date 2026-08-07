@@ -70,7 +70,8 @@ a {
     color: var(--acc-fg);
 }
 
-main {
+main,
+.input-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center; /* main axis */
@@ -205,6 +206,7 @@ main footer {
     }
 
     #convertedAge,
+    #convertedAgeDOB,
     .form-element {
         font-size: 1.3em;
         width: 9.5em;

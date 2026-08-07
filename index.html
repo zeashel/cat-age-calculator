@@ -26,41 +26,48 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <main>
             <h1>cat age<br>calculator</h1>
 
-            <!-- int input -->
-            <div class="form-set" id="intInput">
-                <label class="font-bold" for="catAge">your cat's age:</label>
-                <input
-                    autofocus
-                    class="form-element"
-                    id="catAge"
-                    type="number"
-                    placeholder="age (number)"
-                    min="0"
-                    max="999"
-                >
-            </div>
-
-            <!-- dob input (hidden by default) -->
-            <div class="form-set dob-field" id="dobInput" style="display:none;">
-                <label class="font-bold" for="catDOB">Cat's date of birth:</label>
+            <!-- int input + result -->
+            <div id="intInput" class="input-wrapper">
                 <div class="form-set">
+                    <label class="font-bold" for="catAge">your cat's age:</label>
                     <input
+                        autofocus
                         class="form-element"
-                        type="date"
-                        id="catDOB"
-                        value="2015-01-01"
-                    />
-                    <p>(<span id="catAgeFromDOB" class="nowrap"></span> years old)</p>
+                        id="catAge"
+                        type="number"
+                        placeholder="age (number)"
+                        min="0"
+                        max="999"
+                    >
+                </div>
+                <!-- result -->
+                <div class="form-set">
+                    <p class="font-bold nowrap">human years:</p>
+                    <span id="convertedAge" class="nowrap">unknown</span>
                 </div>
             </div>
 
-            <!-- result -->
-            <div class="form-set">
-                <p class="font-bold nowrap">human years:</p>
-                <span id="convertedAge" class="nowrap">unknown</span>
+            <!-- dob input + result (hidden by default) -->
+            <div id="dobInput" class="input-wrapper" style="display:none;">
+                <div class="form-set dob-field">
+                    <label class="font-bold" for="catDOB">Cat's date of birth:</label>
+                    <div class="form-set">
+                        <input
+                            class="form-element"
+                            type="date"
+                            id="catDOB"
+                            value="2015-01-01"
+                        />
+                        <p>(<span id="catAgeFromDOB" class="nowrap"></span> years old)</p>
+                    </div>
+                </div>
+                <!-- result -->
+                <div class="form-set">
+                    <p class="font-bold nowrap">human years:</p>
+                    <span id="convertedAgeDOB" class="nowrap">unknown</span>
+                </div>
             </div>
 
-            <!-- int/dob input toggle -->
             <div class="form-set dob-toggle">
                 <input id="inputToggleCheckbox" type="checkbox"><p class="font-tiny">Input DOB instead (precise)</p>
             </div>
