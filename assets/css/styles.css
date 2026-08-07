@@ -14,7 +14,7 @@
     --main-fg-faded: #e3e3de7b;
     --main-bg: #1a1613;
     --acc-fg: #ffff8f;
-    --font-pixel: 'Silkscreen', monospace;
+    --font-pixel: 'Silkscreen', 'Courier', ui-monospace, 'SFMono-Regular', 'SF Mono', monospace;
 }
 
 /* Silkscreen font import */
