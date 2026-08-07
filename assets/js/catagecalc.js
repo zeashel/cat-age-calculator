@@ -13,7 +13,7 @@ export function catToHumanAge(catAge) {
     const post = "</span>";
 
     // sanitize
-    if (catAge === "" || catAge === null || typeof catAge !== "number") {
+    if (catAge == "" || catAge == null) {
         return "unknown";
     } else if (catAge < 0) {
         return "int too small";
