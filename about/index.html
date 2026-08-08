@@ -15,6 +15,7 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
     <title>Cat Age Calculator Formula</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/about.css">
+    <link rel="stylesheet" href="../assets/css/code.css">
     <link rel="apple-touch-icon" href="../favicon.png">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../favicon.png" type="image/png">
@@ -44,29 +45,31 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <pre><code>24 + 4 * (x - 2)
 24 + 4x - 8
 16 + 4x</code></pre>
-        <p><code>16 + 4x</code> is the formula I implemented in the JavaScript function <code>catToHumanAge()</code>:</p>
-        <pre><code><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">catToHumanAge</span>(<span style="color:#a6e22e">catAge</span>) {
-        </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pre</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span style=&#34;color:var(--acc-fg);&#34;&gt;&#39;</span>
-        </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">post</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;/span&gt;&#39;</span>
-        </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 0 &lt;= x &lt; 1
-        </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>) {
-        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">less than 15</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-        </span></span><span style="display:flex;"><span>    }
-        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
-        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">15</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
-        </span></span><span style="display:flex;"><span>    }
-        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
-        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}</span><span style="color:#e6db74">24</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
-        </span></span><span style="display:flex;"><span>    }
-        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">catAge</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>) {
+        <p><code>16 + 4x</code> is the formula I implemented in the JavaScript function <code>calcCatToHumanAge(catAge)</code>:</p>
 
-        <span style="color:#75715e">// 16 + 4x here</span>
-        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pre</span><span style="color:#e6db74">}${</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> (<span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">catAge</span>)<span style="color:#e6db74">}${</span><span style="color:#a6e22e">post</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> years old`</span>;
-        </span></span><span style="display:flex;"><span>    }
-        </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
-        </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;unknown&#34;</span>;
-        </span></span><span style="display:flex;"><span>    }
-        </span></span><span style="display:flex;"><span>}</code></pre>
+<pre><code class="hcj language-javascript"><span class="hcj-comment">/**
+ * converts cat years to human years, using purina&#x27;s cat-to-human years formula
+ * <span class="hcj-doctag">@param</span> {<span class="hcj-type">number</span>} <span class="hcj-variable">catAge</span> - cat age in years.
+ * <span class="hcj-doctag">@returns</span> {<span class="hcj-type">number</span>} human age in years.
+ */</span>
+<span class="hcj-keyword">function</span> <span class="hcj-title function_">calcCatToHumanAge</span>(<span class="hcj-params">catAge</span>) {
+    <span class="hcj-comment">// from 0 = 0 ... 1 = 15</span>
+    <span class="hcj-comment">// -&gt; 0 &lt;= x &lt;= 1: f(x) = 15x</span>
+    <span class="hcj-keyword">if</span> (catAge &gt;= <span class="hcj-number">0</span> &amp;&amp; catAge &lt;= <span class="hcj-number">1</span>) {
+        <span class="hcj-keyword">return</span> <span class="hcj-title class_">Math</span>.<span class="hcj-title function_">round</span>(<span class="hcj-number">15</span> * catAge);
+    }
+    <span class="hcj-comment">// from 1 = 15 ... 2 = 24</span>
+    <span class="hcj-comment">// -&gt; 1 &lt; x &lt; 2: f(x) = 6 + 9x</span>
+    <span class="hcj-keyword">else</span> <span class="hcj-keyword">if</span> (catAge &gt; <span class="hcj-number">1</span> &amp;&amp; catAge &lt;= <span class="hcj-number">2</span>) {
+        <span class="hcj-keyword">return</span> <span class="hcj-title class_">Math</span>.<span class="hcj-title function_">round</span>(<span class="hcj-number">6</span> + <span class="hcj-number">9</span> * catAge);
+    }
+    <span class="hcj-comment">// from 2 = 24 ... x = 24 + 4(x - 2)</span>
+    <span class="hcj-comment">// -&gt; x &gt;= 2: f(x) = 16 + 4x</span>
+    <span class="hcj-keyword">else</span> <span class="hcj-keyword">if</span> (catAge &gt; <span class="hcj-number">2</span>) {
+        <span class="hcj-keyword">return</span> <span class="hcj-title class_">Math</span>.<span class="hcj-title function_">round</span>(<span class="hcj-number">16</span> + <span class="hcj-number">4</span> * catAge);
+    }
+}</code></pre>
+
         <footer>art and code by zahra | <a href="https://github.com/zeashel/cat-age-calculator">github</a>.</footer>
     </main>
 </body>
