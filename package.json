@@ -1,5 +1,12 @@
 {
-	"dependencies": {
-		"markdown-it": "^15.0.0"
-	}
+    "dependencies": {
+        "markdown-it": "^15.0.0"
+    },
+    "scripts": {
+        "build": "node build.js",
+        "dev": "nodemon --watch src --ext md,html --exec \"node build\""
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    }
 }
