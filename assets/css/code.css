@@ -1,0 +1,48 @@
+.hcj {
+    color: #d3af86;
+}
+.hcj-comment,
+.hcj-quote {
+    color: #d6baad50;
+}
+.hcj-meta,
+.hcj-name,
+.hcj-regexp,
+.hcj-selector-class,
+.hcj-selector-id,
+.hcj-tag,
+.hcj-template-variable,
+.hcj-variable {
+    color: #dc3958;
+}
+.hcj-built_in,
+.hcj-deletion,
+.hcj-link,
+.hcj-literal,
+.hcj-number,
+.hcj-params,
+.hcj-type {
+    color: #f79a32;
+}
+.hcj-addition,
+.hcj-bullet,
+.hcj-string,
+.hcj-symbol {
+    color: #889b4a;
+}
+.hcj-function,
+.hcj-keyword,
+.hcj-selector-tag {
+    color: #98676a;
+}
+.hcj-attribute,
+.hcj-section,
+.hcj-title {
+    color: #f06431;
+}
+.hcj-emphasis {
+    font-style: italic;
+}
+.hcj-strong {
+    font-weight: 700;
+}
