@@ -26,15 +26,18 @@ function validateCatAge(catAge) {
 // - arg: int (cat years)
 // - return: int (human years)
 function calcCatToHumanAge(catAge) {
-    // from 0 = 0 ... 1 = 15 -> 0 <= x <= 1: f(x) = 15x
+    // from 0 = 0 ... 1 = 15
+    // -> 0 <= x <= 1: f(x) = 15x
     if (catAge >= 0 && catAge <= 1) {
         return Math.round(15 * catAge);
     }
-    // from 1 = 15 ... 2 = 24 -> 1 < x <= 2: f(x) = 6 + 9x
+    // from 1 = 15 ... 2 = 24
+    // -> 1 < x < 2: f(x) = 6 + 9x
     else if (catAge > 1 && catAge <= 2) {
         return Math.round(6 + 9 * catAge);
     }
-    // from 2 = 24 ... x = 24 + 4(x - 2) -> x > 2: f(x) = 16 + 4x
+    // from 2 = 24 ... x = 24 + 4(x - 2)
+    // -> x >= 2: f(x) = 16 + 4x
     else if (catAge > 2) {
         return Math.round(16 + 4 * catAge);
     }
