@@ -8,10 +8,15 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 let html = fs.readFileSync('src/about-template.html', 'utf8');
 
-// convert markdown files
-const aboutHtml = md.render(fs.readFileSync('src/about.md', 'utf8'));
+const sections = ['about', 'privacy', 'toc'];
 
-// replace placeholders
-html = html.replace('{{ about }}', aboutHtml);
+// find and replace placeholders
+for (const section of sections) {
+    // convert markdown files
+    const aboutHtml = md.render(fs.readFileSync(`src/${section}.md`, 'utf8'));
+
+    // replace placeholders
+    html = html.replace(`{{ ${section} }}`, aboutHtml);
+}
 
 fs.writeFileSync('about/index.html', html);
