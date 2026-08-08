@@ -1,15 +1,15 @@
 /*
  * Copyright (c) 2026. Zahra A. S., All rights reserved.
  * This design is the intellectual property of Zahra A. S.
- * Unauthorized use, reproduction, or distribution of this design is prohibited.
+ * Unauthorized use, reproduction, or distribution of this code is prohibited.
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
-// validator
-// - arg: int (catAge)
-// - returns:
-//      - if invalid: string (error)
-//      - if valid: null
+ /**
+  * validates a cat age.
+  * @param {number|null|undefined|string} catAge - cat age.
+  * @returns {string|null} error string if invalid, null if valid.
+  */
 function validateCatAge(catAge) {
     if (catAge == "" || catAge == null) {
         return "unknown";
@@ -22,9 +22,11 @@ function validateCatAge(catAge) {
     }
 }
 
-// function that uses the cat-to-human years formula
-// - arg: int (cat years)
-// - return: int (human years)
+/**
+ * converts cat years to human years, using purina's cat-to-human years formula
+ * @param {number} catAge - cat age in years.
+ * @returns {number} human age in years.
+ */
 function calcCatToHumanAge(catAge) {
     // from 0 = 0 ... 1 = 15
     // -> 0 <= x <= 1: f(x) = 15x
@@ -43,8 +45,11 @@ function calcCatToHumanAge(catAge) {
     }
 }
 
-// - arg: int (or any other value which will return "unknown")
-// - returns: HTML string
+/**
+ * validates, converts cat to human age in years, then formats.
+ * @param {number|null|undefined|string} catAge - cat age in years.
+ * @returns {string} HTML string of human age in years or error string.
+ */
 export function catToHumanAge(catAge) {
     const error = validateCatAge(catAge) // if valid returns null
     if (error) {
