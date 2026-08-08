@@ -5,11 +5,11 @@
  * For permissions, contact 182934048+zeashel@users.noreply.github.com
  */
 
- /**
-  * validates a cat age.
-  * @param {number|null|undefined|string} catAge - cat age.
-  * @returns {string|null} error string if invalid, null if valid.
-  */
+/**
+ * validates a cat age.
+ * @param {number|null|undefined|string} catAge - cat age.
+ * @returns {string|null} error string if invalid, null if valid.
+ */
 function validateCatAge(catAge) {
     if (catAge == "" || catAge == null) {
         return "unknown";
