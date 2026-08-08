@@ -28,7 +28,7 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <p>This calculator's estimates your cat's approximate age in human years using a formula based on Purina Pet Expert Team's article. Enter your cat’s current age (in years) or their date of birth, and the calculator will instantly return an approximate human age estimate.</p>
         <br>
         <h2>How the formula was made</h2>
-        <p>According to <a href="https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years" target="_blank" rel="noopener noreferrer">Purina's Pet Expert Team</a>, &ldquo;&hellip;first year of your cat’s life is considered the equivalent of 15 human years. The second year adds nine more human years, so 2 cat years are approximately 24 human years. After this, each additional human year is four “cat years” i.e., age 3 will be 28 human years.&rdquo;</p>
+        <p>According to <a href="https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years" target="_blank" rel="noopener noreferrer">Purina's Pet Expert Team</a>, "...first year of your cat's life is considered the equivalent of 15 human years. The second year adds nine more human years, so 2 cat years are approximately 24 human years. After this, each additional human year is four “cat years” i.e., age 3 will be 28 human years."</p>
         <p>So we can deduce that:</p>
         <ul>
         <li>1 year old cat = 15 in human years</li>
@@ -38,14 +38,14 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <li>5 year old cat = <code>24 + 4 + 4 + 4</code> = <code>36</code></li>
         <li>and so on.</li>
         </ul>
-        <p>To simplify the addition of 4 in years subsequent 2 years, we can make the following formula. Let&rsquo;s say x is the cat&rsquo;s age:
-        <code>24 + 4 * (x - 2)</code>
-        We subtract x (the cat&rsquo;s age) by 2 because 24 already accounts for the first two years of the cat&rsquo;s age.</p>
+        <p>To simplify the addition of 4 in years subsequent 2 years, we can make the following function. Let's say <code>x</code> is the cat's age:
+        <code>f(x) = 24 + 4 * (x - 2)</code>
+        We subtract x (the cat's age) by 2 because 24 already accounts for the first two years of the cat's age.</p>
         <p>We can simplify further to:</p>
-        <pre><code>24 + 4 * (x - 2)
-24 + 4x - 8
-16 + 4x</code></pre>
-        <p><code>16 + 4x</code> is the formula I implemented in the JavaScript function <code>calcCatToHumanAge(catAge)</code>:</p>
+        <pre><code>f(x) = 24 + 4 * (x - 2)
+f(x) = 24 + 4x - 8
+f(x) = 16 + 4x</code></pre>
+        <p><code>f(x) = 16 + 4x</code> is the formula I implemented in the JavaScript function <code>calcCatToHumanAge(catAge)</code>:</p>
 
 <pre><code class="hcj language-javascript"><span class="hcj-comment">/**
  * converts cat years to human years, using purina&#x27;s cat-to-human years formula
@@ -69,6 +69,15 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
         <span class="hcj-keyword">return</span> <span class="hcj-title class_">Math</span>.<span class="hcj-title function_">round</span>(<span class="hcj-number">16</span> + <span class="hcj-number">4</span> * catAge);
     }
 }</code></pre>
+
+        <p>You can view the full and updated script I wrote <a href="../assets/js/catagecalc.js">here</a>.</p>
+
+        <br>
+
+        <h2>Privacy Policy</h2>
+        <p>
+            This website is a fully static site hosted on GitHub Pages. It does not collect, store, or transmit any personal data. All age and date-of-birth input, along with age calculations, are performed entirely on your device using client-side JavaScript. That information never leaves your device and is not sent to any server. The site does not use cookies, analytics, tracking tools, third-party APIs, or CDNs.
+        </p>
 
         <footer>art and code by zahra | <a href="https://github.com/zeashel/cat-age-calculator">github</a>.</footer>
     </main>
