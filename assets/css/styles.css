@@ -15,6 +15,7 @@
     --main-bg: #1a1613;
     --acc-fg: #ffff8f;
     --font-pixel: 'Silkscreen', 'Courier', ui-monospace, 'SFMono-Regular', 'SF Mono', monospace;
+    --font-pixel-h: 'Jersey', 'Silkscreen', 'Courier', ui-monospace, 'SFMono-Regular', 'SF Mono', monospace;
 }
 
 /* Silkscreen font import */
@@ -31,6 +32,13 @@
     src: url('../fonts/Silkscreen-Bold.woff2') format('woff2');
     font-weight: 500 800; /* range of weights */
     font-style: normal;
+}
+
+/* Jersey10 font import */
+
+@font-face {
+    font-family: 'Jersey';
+    src: url('../fonts/Jersey10-Regular.woff2') format('woff2');
 }
 
 /* ===========================
@@ -95,6 +103,12 @@ main footer {
 /* ===========================
  * CLASSES
  * =========================== */
+
+.font-title {
+    font-family: var(--font-pixel-h);
+    font-size: clamp(3rem, 5vw + 1rem, 5rem);
+    line-height: clamp(2.5rem, 3.5vw + 1rem, 4.5rem);
+}
 
 .font-bold {
     font-weight: 500;
@@ -189,6 +203,10 @@ main footer {
     main footer,
     .noscript-div {
         width: clamp(0px, 90vw, 500px);
+    }
+
+    .font-title br {
+        display: none;
     }
 
     .wrapper {
