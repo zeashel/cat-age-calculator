@@ -6,11 +6,22 @@ View the website here: https://zeashel.github.io/cat-age-calculator/
 
 ## Stack
 
-Vanilla HTML, CSS, and JavaScript.
+- Vanilla HTML, CSS, and JavaScript. 
+- `markdown-it` in a very simple `build.js` for converting markdown to HTML. 
+
+The overhead of an SSG was not needed due to the simplicity and minimalism of this site.
 
 ## Local Development
 
-This is a completely vanilla HTML/CSS/JS app. Use a basic web server (like python `http.server`) for local testing.
+### Prerequisites
+
+This is a completely vanilla HTML/CSS/JS app but for ease of testing and building, node and a basic web server (like python `http.server`) is needed.
+
+-   [Node.js](https://nodejs.org/)
+-   [pnpm](https://pnpm.io/installation) (though npm should work fine too)
+-   python `http.server` that comes with python (or any similar web server)
+
+### Running
 
 1. Clone this repo.
 ```bash
@@ -22,7 +33,12 @@ git clone https://github.com/zeashel/cat-age-calculator.git
 cd cat-age-calculator
 ```
 
-3. Start python http.server (or any web server) for local development.
+3. Start the dev script to get nodemon to watch the `src/` directory and run build.js at every file change (only if doing edits to the about page).
+```bash
+pnpm dev
+```
+
+4. Start python http.server (or any web server) for local development.
 ```bash
 python3 -m http.server 8000
 ```
