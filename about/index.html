@@ -28,16 +28,20 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
 
         <p>This calculator's estimates your cat's approximate age in human years using a formula based on Purina Pet Expert Team's article. Enter your cat’s current age (in years) or their date of birth, and the calculator will instantly return an approximate human age estimate.</p>
 
-        <h2>ToC</h2>
+        <br>
+
+        <h2>Table of Contents</h2>
 <ul>
 <li><a href="#source">Source of Formula</a></li>
 <li><a href="#privacy">Privacy Policy</a></li>
 </ul>
 
 
+        <br>
+
         <h2 id="source">How the formula was made</h2>
 
-        <p>According to <a href="https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years">Purina's Pet Expert Team</a>, &quot;...first year of your cat's life is considered the equivalent of 15 human years. The second year adds nine more human years, so 2 cat years are approximately 24 human years. After this, each additional human year is four “cat years” i.e., age 3 will be 28 human years.&quot;</p>
+        <p>According to <a href="https://www.purina.com/articles/cat/behavior/understanding-cats/cat-years-to-human-years">Purina's Pet Expert Team</a>, &quot;<em>...first year of your cat's life is considered the equivalent of 15 human years. The second year adds nine more human years, so 2 cat years are approximately 24 human years. After this, each additional human year is four “cat years” i.e., age 3 will be 28 human years.</em>&quot;</p>
 <p>So we can deduce that:</p>
 <ul>
 <li>1 year old cat = 15 in human years</li>
@@ -47,13 +51,49 @@ For permissions, contact 182934048+zeashel@users.noreply.github.com
 <li>5 year old cat = <code>24 + 4 + 4 + 4</code> = <code>36</code></li>
 <li>and so on.</li>
 </ul>
+<h3>Cats aged 2 and above</h3>
 <p>To simplify the addition of 4 in years subsequent 2 years, we can make the following function. Let's say <code>x</code> is the cat's age: <code>f(x) = 24 + 4 * (x - 2)</code> We subtract x (the cat's age) by 2 because 24 already accounts for the first two years of the cat's age.</p>
 <p>We can simplify further to:</p>
 <pre><code>f(x) = 24 + 4 * (x - 2)
 f(x) = 24 + 4x - 8
 f(x) = 16 + 4x
 </code></pre>
+<p>Now we can test <code>x &gt;= 2: f(x) = 16 + 4x</code> (only for years 2 and above):</p>
+<ul>
+<li><code>f(3) = 16 + 4 * 3 = 28</code></li>
+<li><code>f(5) = 16 + 4 * 5 = 36</code></li>
+<li><code>f(13) = 16 + 4 * 13 = 68</code></li>
+</ul>
+<p>This also accounts for 2 year old cats since the function is derived from 2 cat years = 24 human years:</p>
+<ul>
+<li><code>f(2) = 16 + 4 * 2 = 24</code></li>
+</ul>
+<p>This is why we define it as <code>x &gt;= 2</code> instead of <code>x &gt; 2</code>. This function also works with precise decimals:</p>
+<ul>
+<li><code>f(2.5) = 16 + 4 * 2.5 = 26</code> (for example, your cat is 2 years and 6 months old)</li>
+</ul>
+<p>Looks good!</p>
 <p><code>f(x) = 16 + 4x</code> is the formula I implemented in the JavaScript function <code>calcCatToHumanAge(catAge)</code>:</p>
+<h1>TEMP</h1>
+<h3>Cats aged 0 to 1</h3>
+<p>So the next question is, how do we determine the cat's human age if they're between 0 to 1 years old (<code>0 &lt;= x &lt;= 1</code>), or between 1 and 2 years old (<code>1 &lt;= x &lt;= 2</code>)? For instance, your cat is 6 months old (0.5 years) and you'd like to determine their approximate age.</p>
+<p>Well, for <code>0 &lt;= x &lt;= 1</code>, it's quite easy because we know 1 cat year = 15 human years. And 0 cat years is obviously equal to 0 human years, so we can deduce:</p>
+<pre><code>g(0) = 0 ... g(1) = 15
+g(x) = 15x
+</code></pre>
+<p>In JavaScript:</p>
+<h1>TEMP</h1>
+<h3>Cats aged 1 to 2</h3>
+<p>For cat years <code>1 &lt;= x &lt;= 2</code>, we have 2 reference points once more:</p>
+<ul>
+<li>1 cat year = 15 human years</li>
+<li>2 cat years = 24 human years</li>
+</ul>
+<pre><code>h(1) = 15 ... h(2) = 24
+
+h(x) = 15 + (9 * (x - 1))
+
+</code></pre>
 
 
 <pre><code class="hcj language-javascript"><span class="hcj-comment">/**

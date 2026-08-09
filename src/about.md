@@ -9,6 +9,8 @@ So we can deduce that:
 -   5 year old cat = `24 + 4 + 4 + 4` = `36`
 -   and so on.
 
+### Cats aged 2 and above
+
 To simplify the addition of 4 in years subsequent 2 years, we can make the following function. Let's say `x` is the cat's age: `f(x) = 24 + 4 * (x - 2)` We subtract x (the cat's age) by 2 because 24 already accounts for the first two years of the cat's age.
 
 We can simplify further to:
@@ -29,7 +31,7 @@ This also accounts for 2 year old cats since the function is derived from 2 cat 
 
 - `f(2) = 16 + 4 * 2 = 24`
 
-Also works with precise decimals:
+This is why we define it as `x >= 2` instead of `x > 2`. This function also works with precise decimals:
 
 - `f(2.5) = 16 + 4 * 2.5 = 26` (for example, your cat is 2 years and 6 months old)
 
@@ -40,4 +42,31 @@ Looks good!
 # TEMP
 
 
-So the next question is, how do we determine the cat's human age if they're between 0 to 1 years old, or between 1 and 2 years old? For instance, your cat is 6 months old (0.5 years) and you'd like to determine their approximate age.
+### Cats aged 0 to 1
+
+So the next question is, how do we determine the cat's human age if they're between 0 to 1 years old (`0 <= x <= 1`), or between 1 and 2 years old (`1 <= x <= 2`)? For instance, your cat is 6 months old (0.5 years) and you'd like to determine their approximate age.
+
+Well, for `0 <= x <= 1`, it's quite easy because we know 1 cat year = 15 human years. And 0 cat years is obviously equal to 0 human years, so we can deduce:
+
+```
+g(0) = 0 ... g(1) = 15
+g(x) = 15x
+```
+
+In JavaScript:
+
+# TEMP
+
+### Cats aged 1 to 2
+
+For cat years `1 <= x <= 2`, we have 2 reference points once more:
+
+- 1 cat year = 15 human years
+- 2 cat years = 24 human years
+
+```
+h(1) = 15 ... h(2) = 24
+
+h(x) = 15 + (9 * (x - 1))
+
+```
