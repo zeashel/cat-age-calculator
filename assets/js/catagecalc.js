@@ -51,9 +51,9 @@ function calcCatToHumanAge(catAge) {
  * @returns {string} HTML string of human age in years or error string.
  */
 export function catToHumanAge(catAge) {
-    const error = validateCatAge(catAge) // if valid returns null
+    const error = validateCatAge(catAge); // if valid returns null
     if (error) {
-        return error
+        return error;
     }
 
     const pre = '<span style="color:var(--acc-fg);">';

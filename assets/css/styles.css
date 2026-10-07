@@ -14,22 +14,26 @@
     --main-fg-faded: #e3e3de7b;
     --main-bg: #1a1613;
     --acc-fg: #ffff8f;
-    --font-pixel: 'Silkscreen', 'Courier', ui-monospace, 'SFMono-Regular', 'SF Mono', monospace;
-    --font-pixel-h: 'Jersey', 'Silkscreen', 'Courier', ui-monospace, 'SFMono-Regular', 'SF Mono', monospace;
+    --font-pixel:
+        "Silkscreen", "Courier", ui-monospace, "SFMono-Regular", "SF Mono",
+        monospace;
+    --font-pixel-h:
+        "Jersey", "Silkscreen", "Courier", ui-monospace, "SFMono-Regular",
+        "SF Mono", monospace;
 }
 
 /* Silkscreen font import */
 @font-face {
-    font-family: 'Silkscreen';
-    src: url('../fonts/Silkscreen-Regular.woff2') format('woff2');
+    font-family: "Silkscreen";
+    src: url("../fonts/Silkscreen-Regular.woff2") format("woff2");
     font-weight: 100 400; /* range of weights */
     font-style: normal;
 }
 
 /* Silkscreen font import (bold) */
 @font-face {
-    font-family: 'Silkscreen';
-    src: url('../fonts/Silkscreen-Bold.woff2') format('woff2');
+    font-family: "Silkscreen";
+    src: url("../fonts/Silkscreen-Bold.woff2") format("woff2");
     font-weight: 500 800; /* range of weights */
     font-style: normal;
 }
@@ -37,8 +41,8 @@
 /* Jersey10 font import */
 
 @font-face {
-    font-family: 'Jersey';
-    src: url('../fonts/Jersey10-Regular.woff2') format('woff2');
+    font-family: "Jersey";
+    src: url("../fonts/Jersey10-Regular.woff2") format("woff2");
 }
 
 /* ===========================
@@ -51,7 +55,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -70,7 +75,9 @@ body {
     align-items: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     padding-bottom: var(--general-padding);
 }
 

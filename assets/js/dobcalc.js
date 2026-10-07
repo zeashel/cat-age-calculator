@@ -8,7 +8,7 @@
 import { catToHumanAge } from "./catagecalc.js";
 
 const inputElementDOB = document.getElementById("catDOB"); // dob input
-const catAgeOutputElement = document.getElementById("catAgeFromDOB") // in cat years output
+const catAgeOutputElement = document.getElementById("catAgeFromDOB"); // in cat years output
 const outputElement = document.getElementById("convertedAgeDOB"); // in human years output
 
 function liveInputHandlerDOB() {
